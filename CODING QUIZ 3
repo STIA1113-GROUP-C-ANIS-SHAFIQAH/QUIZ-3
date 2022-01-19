@@ -15,7 +15,7 @@ public class Quiz3 {
         
         int[] list = new int[size];
         
-        int option;
+        int opt;
         do 
         {
             System.out.println("**************OPTION*************");
@@ -25,9 +25,9 @@ public class Quiz3 {
             System.out.println("4. SORTING ARRAY");
             System.out.println("5. EXIT");
             System.out.print("CHOOSE YOUR OPTION : ");
-            option = sc.nextInt();
+            opt = sc.nextInt();
         
-            switch (option) 
+            switch (opt) 
             {
                 case 1:
                     readArray(list);
@@ -39,8 +39,8 @@ public class Quiz3 {
                     
                 case 3:
                     System.out.print("ENTER NUMBER: ");
-                    int item = sc.nextInt();
-                    int index = searchArray(list, item);
+                    int num = sc.nextInt();
+                    int index = searchArray(list, num);
                     if (index == -1) 
                     {
                         System.out.println("NOT FOUND");
@@ -57,7 +57,8 @@ public class Quiz3 {
                     displayArray(list);
                     break;
             }
-        } while (option != 5);
+        } while (opt!= 5);
+        System.out.println("BYE BYE !");
     }
     
     static void readArray(int[] array) 
@@ -94,16 +95,17 @@ public class Quiz3 {
     {
         for (int i = 0; i < array.length - 1; i++)
         {
-            for(int j = 0; j < array.length -i-1; j++)
+            for(int X = 0; X < array.length -i-1; X++)
             {
-                if(array[j] > array[j+1])
+                if(array[X] > array[X+1])
                 {
-                    int temp = array[j];
-                    array[j] = array[j+1];
-                    array[j+1] = temp;
+                    int temp = array[X];
+                    array[X] = array[X+1];
+                    array[X+1] = temp;
                 }
             }
         }          
     }
     
 }
+
